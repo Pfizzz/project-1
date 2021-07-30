@@ -1,47 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Compiled and minified CSS -->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <title>Test Project</title>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>&Chill</title>
+    <style>
+        body {
+          background-image: url('./assets/images/background.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center;
+          background-size: cover;
+        }
+      </style>
 </head>
-<body>
+
+<body class="grey">
     <!-- Hero section start -->
-    <header id="hero">
-        <img src="https://cdn3.iconfinder.com/data/icons/outline-amenities-icon-set/64/Film_Festival-512.png" width=50/>
-        <h1>&Chill</h1>
+    <header class="container-fluid" id="hero">
+        <div class="row purple darken-2">
+            <div class="col s12 center-align">
+                <img src="https://cdn3.iconfinder.com/data/icons/outline-amenities-icon-set/64/Film_Festival-512.png"
+                    width=50 />
+            </div>
+            <div class="col s12">
+                <h1 class="purple darken-4 grey-text text-lighten-5 center-align">&Chill</h1>
+            </div>
+        </div>
     </header>
 
     <!-- Movie section start -->
-    <div id="movies">
-        <h2>Browse Streaming Movies and TV</h2>
-        <p>
-            Don't know what's on? Browse 12 different streaming services. 
-            Refine your search with filters, check out reviews, and add your choice.
-        </p>
+    <div class="row" id="master-container">
+        <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align" id="movies">
+            <h2><span><a class="btn-floating btn-med waves-effect waves-light purple"><i class="material-icons">add</i></a></span>Browse Streaming Movies and TV</h2>
+            <p>
+                <!--hide this on click-->
+                Don't know what's on? Browse the most popular streaming services.
+                Refine your search with filters, check out reviews, and add your choice.
+            </p>
+            
+            <div id="movie-api">
+                <!-- MOVIE API INFO GOES HERE-->
+            </div>
+        </div>
+
+        <!-- Dining section start -->
+        <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align" id="dining">
+            <h2><span><a class="btn-floating btn-med waves-effect waves-light purple"><i class="material-icons">add</i></a></span>Browse Local Dining</h2>
+            <p>
+                <!-- hide this on click -->
+                Hungry? Complete your movie with a meal while supporting your local restaurants.
+            </p>
+            <div id="dining-api">
+                <!-- DINING API INFO GOES HERE-->
+            </div>
+        </div>
     </div>
 
-    <!-- Dining section start -->
-    <div id="dining">
-        <h2>Browse Local Dining</h2>
-        <p>Hungry? Complete your movie with a meal while supporting your local restaurants.</p>
-    </div>
+    <!-- Divider -->
+    <div class="container divider"></div>
+
     <!-- Generate plan section -->
-    <div id="generate">
-
-        <button id="generate-btn">Generate Your Plan!</button>
+    <div class="container" id="generate">
+        <div class="row center-align">
+            <a class="waves-effect waves-light btn-large purple" id="generate-btn"><i class="material-icons left">create</i>Generate Your Plan!</a>
+        </div>
     </div>
 
-    <div id="footer">
-        <p>&copy; 2021 MonkeyMedia, LLC.</p>
+    <div class="container-fluid center-align" id="footer">
+        <div class="row">
+            <p>&copy; 2021 MonkeyMedia, LLC.</p>
+        </div>
     </div>
 
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
 </body>
+
 </html>

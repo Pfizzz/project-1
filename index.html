@@ -9,17 +9,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>&Chill</title>
     <style>
         body {
-          background-image: url('./assets/images/background.jpg');
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-position: center;
-          background-size: cover;
+            background-image: url('./assets/images/background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
         }
-      </style>
+    </style>
 </head>
 
 <body class="grey">
@@ -29,62 +29,193 @@
             <div class="col s12">
                 <h1 class="purple darken-4 grey-text text-lighten-5 center-align z-depth-5">&Chill</h1>
             </div>
-            <div class="col s12 center-align">
-                <img src="https://cdn3.iconfinder.com/data/icons/outline-amenities-icon-set/64/Film_Festival-512.png"
-                    width=50 />
-            </div>
         </div>
     </header>
 
     <!-- Movie section start -->
-   <div class="container center-align">
-    <div class="row api-row" id="master-container">
-        <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align z-depth-1 api-col" id="movies">
-            <h2>Browse Streaming Services</h2>
-                <a class="btn-floating btn-med waves-effect waves-light purple"><i class="material-icons">add</i></a>
-            <p>
-                <!--hide this on click-->
-                Don't know what's on? Browse the most popular streaming services.
-                Refine your search with filters and check out reviews.
-            </p>
-            
-            <div id="movie-api">
-                <!-- MOVIE API INFO / FORM HTML GOES HERE-->
+    <div class="container center-align">
+        <div class="row api-row" id="master-container">
+            <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align z-depth-1 api-col"
+                id="movies">
+                <h2>Browse Streaming Services</h2>
+                <a class="btn-floating pulse btn-med waves-effect waves-light purple"><i
+                        class="material-icons">add</i></a>
+                <p>
+                    <!--hide this on click-->
+                    Don't know what's on? Browse the most popular streaming services.
+                    Refine your search with filters and check out reviews.
+                </p>
+
+                <div class="container-fluid" id="movie-api">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row valign-wrapper">
+                                <div class="input-field col s8">
+                                    <textarea id="movie-text-area" class="materialize-textarea"></textarea>
+                                    <label for="movie-text-area">Movie or Show Title</label>
+                                </div>
+                                <button class="col s3 waves-effect waves-light btn-small purple search-btn" type="submit" id="movie-search-btn"><i
+                                        class="material-icons left">search</i>Search</button>
+                                    
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row" id="genre-checklist">
+                        <form action="#">
+                            <p class="col s3">
+                                <label for="action">
+                                    <input type="checkbox" id="action" />
+                                    <span>Action</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="adventure">
+                                    <input type="checkbox" id="adventure" />
+                                    <span>Adventure</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="comedy">
+                                    <input type="checkbox" id="comedy" />
+                                    <span>Comedy</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="horror">
+                                    <input type="checkbox" id="horror" />
+                                    <span>Horror</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="drama">
+                                    <input type="checkbox" id="drama" />
+                                    <span>Drama</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="romance">
+                                    <input type="checkbox" id="romance" />
+                                    <span>Romance</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="sci-fi">
+                                    <input type="checkbox" id="sci-fi" />
+                                    <span>Sci-Fi</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="childrens">
+                                    <input type="checkbox" id="childrens" />
+                                    <span>Children's</span>
+                                </label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dining section start -->
+            <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align z-depth-1 api-col"
+                id="dining">
+                <h2>Browse Local Dining</h2>
+                <a class="btn-floating pulse btn-med waves-effect waves-light purple"><i
+                        class="material-icons">add</i></a>
+                <p>
+                    <!-- hide this on click -->
+                    Hungry? Complete your movie with a meal while supporting your local restaurants.
+                    Check menus, business hours, and more.
+                </p>
+                <div id="dining-api">
+                    <!-- DINING API SEARCH FORM-->
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row valign-wrapper">
+                                <div class="input-field col s8">
+                                    <textarea id="dining-text-area" class="materialize-textarea"></textarea>
+                                    <label for="dining-text-area">Pizza</label>
+                                </div>
+                                <button class="col s3 waves-effect waves-light btn-small purple search-btn" type="submit" id="dining-search-btn"><i
+                                        class="material-icons left">search</i>Search</button>
+                                    
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row" id="dining-checklist">
+                        <form action="#">
+                            <p class="col s3">
+                                <label for="pizza">
+                                    <input type="checkbox" id="pizza" />
+                                    <span>Pizza</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="fast-food">
+                                    <input type="checkbox" id="fast-food" />
+                                    <span>Fast Food</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="healthy">
+                                    <input type="checkbox" id="healthy" />
+                                    <span>Healthy</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="italian">
+                                    <input type="checkbox" id="italian" />
+                                    <span>Italian</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="mexican">
+                                    <input type="checkbox" id="mexican" />
+                                    <span>Mexican</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="chinese">
+                                    <input type="checkbox" id="chinese" />
+                                    <span>Chinese</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="mediterrarian">
+                                    <input type="checkbox" id="mediterrarian" />
+                                    <span>Mediterrarian</span>
+                                </label>
+                            </p>
+                            <p class="col s3">
+                                <label for="vegetarian">
+                                    <input type="checkbox" id="vegetarian" />
+                                    <span>Vegetarian</span>
+                                </label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Dining section start -->
-        <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align z-depth-1 api-col" id="dining">
-            <h2>Browse Local Dining</h2>
-            <a class="btn-floating btn-med waves-effect waves-light purple"><i class="material-icons">add</i></a>
-            <p>
-                <!-- hide this on click -->
-                Hungry? Complete your movie with a meal while supporting your local restaurants. 
-                Check menus, business hours, and more.
-            </p>
-            <div id="dining-api">
-                <!-- DINING API INFO GOES HERE-->
+
+        <!-- Generate plan section -->
+        <div class="container" id="generate">
+            <div class="row center-align">
+                <a href="single.html" target="_blank" class="waves-effect waves-light btn-large purple"
+                    id="generate-btn"><i class="material-icons left">create</i>Generate Your Plan!</a>
             </div>
         </div>
-    </div>
-    
 
-    <!-- Generate plan section -->
-    <div class="container" id="generate">
-        <div class="row center-align">
-            <a href="single.html" target="_blank" class= "waves-effect waves-light btn-large purple" id="generate-btn"><i class="material-icons left">create</i>Generate Your Plan!</a>
+        <div class="container-fluid center-align" id="footer">
+            <div class="row">
+                <p>&copy; 2021 MonkeyMedia, LLC.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="container-fluid center-align" id="footer">
-        <div class="row">
-            <p>&copy; 2021 MonkeyMedia, LLC.</p>
-        </div>
-    </div>
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./assets/js/script.js"></script>
 
 </body>
 

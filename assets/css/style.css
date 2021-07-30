@@ -2,6 +2,8 @@ header {
     opacity: 0.8;
 }
 
+
+
 h2 {
     font-size: 24px;
 }
@@ -10,4 +12,8 @@ h2 {
 .api-col {
     opacity: 0.9;
 
+}
+
+.search-btn {
+    margin-right: 5px;
 }

@@ -25,20 +25,20 @@
 <body class="grey">
     <!-- Hero section start -->
     <header class="container-fluid" id="hero">
-        <div class="row purple darken-2">
+        <div class="row purple darken-2 z-depth-5">
             <div class="col s12 center-align">
                 <img src="https://cdn3.iconfinder.com/data/icons/outline-amenities-icon-set/64/Film_Festival-512.png"
                     width=50 />
             </div>
             <div class="col s12">
-                <h1 class="purple darken-4 grey-text text-lighten-5 center-align">&Chill</h1>
+                <h1 class="purple darken-4 grey-text text-lighten-5 center-align z-depth-5">&Chill</h1>
             </div>
         </div>
     </header>
 
     <!-- Movie section start -->
     <div class="row" id="master-container">
-        <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align" id="movies">
+        <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align z-depth-1 api-col" id="movies">
             <h2><span><a class="btn-floating btn-med waves-effect waves-light purple"><i class="material-icons">add</i></a></span>Browse Streaming Movies and TV</h2>
             <p>
                 <!--hide this on click-->
@@ -47,25 +47,23 @@
             </p>
             
             <div id="movie-api">
-                <!-- MOVIE API INFO GOES HERE-->
+                <!-- MOVIE API INFO / FORM HTML GOES HERE-->
             </div>
         </div>
 
         <!-- Dining section start -->
-        <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align" id="dining">
+        <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align z-depth-1 api-col" id="dining">
             <h2><span><a class="btn-floating btn-med waves-effect waves-light purple"><i class="material-icons">add</i></a></span>Browse Local Dining</h2>
             <p>
                 <!-- hide this on click -->
-                Hungry? Complete your movie with a meal while supporting your local restaurants.
+                Hungry? Complete your movie with a meal while supporting your local restaurants. 
+                Check menus, business hours, and more.
             </p>
             <div id="dining-api">
                 <!-- DINING API INFO GOES HERE-->
             </div>
         </div>
     </div>
-
-    <!-- Divider -->
-    <div class="container divider"></div>
 
     <!-- Generate plan section -->
     <div class="container" id="generate">

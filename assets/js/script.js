@@ -13,40 +13,41 @@ $(document).ready(function() {
 
 //use checkbox data to insert genre into api search
 var getGenre = function(genreId) {
-    var id = genreId;
+    // debugger;
+    var id = 0;
     console.log(id);
     //change the value of genreId based on which checkbox is clicked
     if ($('#action').is(':checked')) {
        id = 28;
-       getMovies(genreId);
+       getMovies(id);
     }
     if ($('#adventure').is(':checked')) {
        id = 12;
-       getMovies(genreId);
+       getMovies(id);
     }
     if ($('#comedy').is(':checked')) {
        id = 35;
-       getMovies(genreId);
+       getMovies(id);
     }
     if ($('#horror').is(':checked')) {
        id = 27;
-       getMovies(genreId);
+       getMovies(id);
     }
     if ($('#drama').is(':checked')) {
        id = 18;
-       getMovies(genreId);
+       getMovies(id);
     }
     if ($('#romance').is(':checked')) {
        id = 10749;
-       getMovies(genreId);
+       getMovies(id);
     }
     if ($('#scifi').is(':checked')) {
        id = 878;
-       getMovies(genreId);
+       getMovies(id);
     }
     if ($('#family').is(':checked')) {
        id = 10751;
-       getMovies(genreId);
+       getMovies(id);
     } 
 }
 
@@ -63,9 +64,35 @@ var getMovies = function (genreId) {
         .then(response => response.json())
         .then(response => {
             console.log(response);
-            console.log(genreId);
+            receiveMovieData(response);
         })
         .catch(err => {
             console.error(err);
         });
 }
+
+var receiveMovieData = function(data) {
+    console.log(data);
+}
+
+//put data that was fetched from the api into objects
+// var movie1 = {
+//     Title: 
+
+// }
+
+// var movie2 = {
+    
+// }
+
+// var movie3 = {
+    
+// }
+
+// var movie4 = {
+    
+// }
+
+// var movie5 = {
+    
+// }

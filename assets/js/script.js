@@ -73,26 +73,29 @@ var getMovies = function (genreId) {
 
 var receiveMovieData = function(data) {
     console.log(data);
+
+    //put data that was fetched from the api into objects
+    var movie1 = {
+        Title: data.results.0.title,
+        
+
+    }
+
+    var movie2 = {
+        
+    }
+
+    var movie3 = {
+        
+    }
+
+    var movie4 = {
+        
+    }
+
+    var movie5 = {
+        
+    }
+
 }
 
-//put data that was fetched from the api into objects
-// var movie1 = {
-//     Title: 
-
-// }
-
-// var movie2 = {
-    
-// }
-
-// var movie3 = {
-    
-// }
-
-// var movie4 = {
-    
-// }
-
-// var movie5 = {
-    
-// }

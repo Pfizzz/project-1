@@ -72,29 +72,65 @@ var getMovies = function (genreId) {
 }
 
 var receiveMovieData = function(data) {
-    console.log(data);
+    // console.log(data);
 
     //put data that was fetched from the api into objects
     var movie1 = {
-        Title: data.results.0.title,
-        
+        title: data.results[0].title,
+        link: data.results[0].streamingInfo.netflix.us,
+        year: data.results[0].year,
+        coverSM: data.results[0].posterURLs[185],
+        coverMD: data.results[0].posterURLs[342],
+        coverLG: data.results[0].posterURLs[500],
+        runtime: data.results[0].runtime,
+        overview: data.results[0].overview
+    };
 
-    }
+    // console.log(movie1.overview);
+    // console.log(movie1.coverSM);
 
     var movie2 = {
-        
+        title: data.results[1].title,
+        link: data.results[1].streamingInfo.netflix.us,
+        year: data.results[1].year,
+        coverSM: data.results[1].posterURLs[185],
+        coverMD: data.results[1].posterURLs[342],
+        coverLG: data.results[1].posterURLs[500],
+        runtime: data.results[1].runtime,
+        overview: data.results[1].overview
     }
 
     var movie3 = {
-        
+        title: data.results[2].title,
+        link: data.results[2].streamingInfo.netflix.us,
+        year: data.results[2].year,
+        coverSM: data.results[2].posterURLs[185],
+        coverMD: data.results[2].posterURLs[342],
+        coverLG: data.results[2].posterURLs[500],
+        runtime: data.results[2].runtime,
+        overview: data.results[2].overview
     }
 
     var movie4 = {
-        
+        title: data.results[3].title,
+        link: data.results[3].streamingInfo.netflix.us,
+        year: data.results[3].year,
+        coverSM: data.results[3].posterURLs[185],
+        coverMD: data.results[3].posterURLs[342],
+        coverLG: data.results[3].posterURLs[500],
+        runtime: data.results[3].runtime,
+        overview: data.results[3].overview
     }
 
     var movie5 = {
-        
+        title: data.results[4].title,
+        link: data.results[4].streamingInfo.netflix.us,
+        year: data.results[4].year,
+        coverSM: data.results[4].posterURLs[185],
+        coverMD: data.results[4].posterURLs[342],
+        coverLG: data.results[4].posterURLs[500],
+        runtime: data.results[4].runtime,
+        overview: data.results[4].overview
     }
 
 }

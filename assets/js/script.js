@@ -5,6 +5,13 @@ var moviesList = [];
 var user_location;
 var checkboxes = [];
 
+// function to reveal hidden divs for + buttons
+function showhide(id) {
+  var e = document.getElementById(id);
+  e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+}
+
+
 //choose movie genre button click
 $(document).ready(function () {
   document.querySelector(".error").style.display = "none";

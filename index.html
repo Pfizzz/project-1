@@ -40,63 +40,63 @@
             <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align z-depth-1 api-col"
                 id="movies">
                 <h2>Browse Streaming Services</h2>
-                <a class="btn-floating pulse btn-med waves-effect waves-light purple"><i
+                <a href="javascript:showhide('movie-api')" class="btn-floating pulse btn-med waves-effect waves-light purple"><i
                         class="material-icons">add</i></a>
                 <p>
                     <!--hide this on click-->
-                    Don't know what's on? Browse the most popular streaming services.
-                    Refine your search with filters and check out reviews.
+                    Don't know what's on? Pick a genre and browse the most popular streaming services.
+                    
                 </p>
 
-                <div class="container-fluid" id="movie-api">
+                <div class="container-fluid" style="display:none" id="movie-api">
                     
                     <!-- movie genre checklist -->
-                    <div class="row" id="genre-checklist">
+                    <div class="row left-align" id="genre-checklist">
                         <form action="#">
                             <p class="col s3">
-                                <label for="action">
+                                <label for="action" class="purple-text text-darken-4">
                                     <input name="group1" type="radio" id="action" checked/>
                                     <span>Action</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="adventure">
+                                <label for="adventure" class="purple-text text-darken-4">
                                     <input name="group1" type="radio" id="adventure" />
                                     <span>Adventure</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="comedy">
+                                <label for="comedy" class="purple-text text-darken-4">
                                     <input name="group1" type="radio" id="comedy" />
                                     <span>Comedy</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="horror">
+                                <label for="horror" class="purple-text text-darken-4">
                                     <input name="group1" type="radio" id="horror" />
                                     <span>Horror</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="drama">
+                                <label for="drama" class="purple-text text-darken-4">
                                     <input name="group1" type="radio" id="drama" />
                                     <span>Drama</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="romance">
+                                <label for="romance" class="purple-text text-darken-4">
                                     <input name="group1" type="radio" id="romance" />
                                     <span>Romance</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="sci-fi">
+                                <label for="sci-fi" class="purple-text text-darken-4">
                                     <input name="group1" type="radio" id="sci-fi" />
                                     <span>Sci-Fi</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="family">
+                                <label for="family" class="purple-text text-darken-4">
                                     <input name="group1" type="radio" id="family" />
                                     <span>Family</span>
                                 </label>
@@ -114,21 +114,20 @@
             <div class="col s12 m12 l6 grey lighten-3 purple-text text-darken-4 center-align z-depth-1 api-col"
                 id="dining">
                 <h2>Browse Local Dining</h2>
-                <a class="btn-floating pulse btn-med waves-effect waves-light purple"><i
+                <a href="javascript:showhide('dining-api')" class="btn-floating pulse btn-med waves-effect waves-light purple"><i
                         class="material-icons">add</i></a>
                 <p>
                     <!-- hide this on click -->
                     Hungry? Complete your movie with a meal while supporting your local restaurants.
-                    Check menus, business hours, and more.
                 </p>
-                <div id="dining-api">
+                <div class="container-fluid" style="display:none" id="dining-api">
                     <!-- dining search form-->
                     <div class="row">
                         <form class="col s12">
                             <div class="row valign-wrapper">
                                 <div class="input-field col s8">
                                     <textarea id="dining-text-area" class="materialize-textarea"></textarea>
-                                    <label for="dining-text-area">Town or City</label>
+                                    <label for="dining-text-area" class="purple-text text-darken-4">Town or City</label>
                                 </div>
                                 <button class="col s3 waves-effect waves-light btn-small purple search-btn"
                                     type="submit" id="dining-search-btn"><i
@@ -139,56 +138,56 @@
                     </div>
 
                     <!-- dining genre checklist -->
-                    <div class="row" id="dining-checklist">
+                    <div class="row left-align" id="dining-checklist">
                         <div class="error">
-                           Please select atleast one checkbox
+                           Please select at least one checkbox.
                         </div>
                         <form action="#" id="food_form">
                             <p class="col s3">
-                                <label for="pizza">
-                                    <input type="checkbox" class="checkbox" id="pizza" />
+                                <label for="pizza" class="purple-text text-darken-4">
+                                    <input type="checkbox" class="checkbox filled-in" id="pizza" />
                                     <span>Pizza</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="american">
-                                    <input type="checkbox" class="checkbox" id="american" />
+                                <label for="american" class="purple-text text-darken-4">
+                                    <input type="checkbox" class="checkbox filled-in" id="american" />
                                     <span>American</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="japanese">
-                                    <input type="checkbox" class="checkbox" id="japanese" />
+                                <label for="japanese" class="purple-text text-darken-4">
+                                    <input type="checkbox" class="checkbox filled-in" id="japanese" />
                                     <span>Japanese</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="italian">
-                                    <input type="checkbox" class="checkbox" id="italian" />
+                                <label for="italian" class="purple-text text-darken-4">
+                                    <input type="checkbox" class="checkbox filled-in" id="italian" />
                                     <span>Italian</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="mexican">
-                                    <input type="checkbox" class="checkbox" id="mexican" />
+                                <label for="mexican" class="purple-text text-darken-4">
+                                    <input type="checkbox" class="checkbox filled-in" id="mexican" />
                                     <span>Mexican</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="chinese">
-                                    <input type="checkbox"  class="checkbox" id="chinese" />
+                                <label for="chinese" class="purple-text text-darken-4">
+                                    <input type="checkbox"  class="checkbox filled-in" id="chinese" />
                                     <span>Chinese</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="steak">
-                                    <input type="checkbox" class="checkbox" id="steak" />
+                                <label for="steak" class="purple-text text-darken-4">
+                                    <input type="checkbox" class="checkbox filled-in" id="steak" />
                                     <span>Steak</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="vegetarian">
-                                    <input type="checkbox" class="checkbox" id="vegetarian" />
+                                <label for="vegetarian" class="purple-text text-darken-4">
+                                    <input type="checkbox" class="checkbox filled-in" id="vegetarian" />
                                     <span>Vegetarian</span>
                                 </label>
                             </p>

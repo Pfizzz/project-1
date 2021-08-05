@@ -6,9 +6,10 @@ var loadMovies = function(){
     console.log(moviesList);
 };
 
-var loadMovies = function(){
+var loadRestaurants = function(){
     restaurantsList = JSON.parse(localStorage.getItem("restaurantList"));
     console.log(restaurantsList);
 };
 
 loadMovies();
+loadRestaurants();

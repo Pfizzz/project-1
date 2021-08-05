@@ -4,7 +4,7 @@ var genreId = 0;
 var moviesList = [];
 var user_location;
 var checkboxes = [];
-
+var restaurantsList = [];
 // function to reveal hidden divs for + buttons
 function showhide(id) {
   var e = document.getElementById(id);
@@ -62,12 +62,26 @@ var getFood = function () {
       .then((response) => response.json())
       .then((response) => {
         console.log(response.data);
+        receiveRestaurantData(response);
       })
       .catch((err) => {
         console.error(err);
       });
   }
 }
+};
+var receiveRestaurantData = function(data){
+  console.log(data);
+  for(var i = 0; i < 5; i++){
+    restaurantsList.push({
+      restaurant_name: data.data[i].restaurant_name,
+      restaurant_phone: data.data[i].restaurant_phone,
+      address: data.data[i].address.formatted,
+      menu: data.data[i].menus
+    });
+  }
+  console.log(restaurantsList);
+  saveRestaurants();
 };
 //use checkbox data to insert genre into api search
 var getGenre = function (genreId) {
@@ -134,7 +148,7 @@ var getMovies = function (genreId) {
 };
 
 var receiveMovieData = function (data) {
-  for (var i = 0; i < 7; i++) {
+  for (var i = 0; i < 5; i++) {
     moviesList.push({
       title: data.results[i].title,
       link: data.results[i].streamingInfo.netflix.us,
@@ -143,7 +157,7 @@ var receiveMovieData = function (data) {
       coverMD: data.results[i].posterURLs[342],
       coverLG: data.results[i].posterURLs[500],
       runtime: data.results[i].runtime,
-      overview: data.results[i].overview,
+      overview: data.results[i].overview
     });
   }
   console.log(moviesList);
@@ -152,4 +166,8 @@ var receiveMovieData = function (data) {
     
 var saveMovies = function(){
     localStorage.setItem("movieList", JSON.stringify(moviesList));
+};
+
+var saveRestaurants = function(){
+  localStorage.setItem("restaurantList", JSON.stringify(restaurantsList));
 };

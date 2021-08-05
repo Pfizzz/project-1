@@ -26,8 +26,10 @@
     <!-- Hero section start -->
     <header class="container-fluid" id="hero">
         <div class="row purple darken-2 z-depth-5">
-            <div class="col s12">
-                <h1 class="purple darken-4 grey-text text-lighten-5 center-align z-depth-5">&Chill</h1>
+            <div class="col s12 center-align">
+                
+             <img src="./assets/images/logo2.png" class="logo"/>   
+             <p class="purple darken-4 grey-text text-lighten-5 center-align z-depth-5">Dinner and a movie just got a lot simpler!</p>
             </div>
         </div>
     </header>
@@ -47,69 +49,55 @@
                 </p>
 
                 <div class="container-fluid" id="movie-api">
-                    <!-- movie search form -->
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="row valign-wrapper">
-                                <div class="input-field col s8">
-                                    <textarea id="movie-text-area" class="materialize-textarea"></textarea>
-                                    <label for="movie-text-area">Movie or Show Title</label>
-                                </div>
-                                <button class="col s3 waves-effect waves-light btn-small purple search-btn"
-                                    type="submit" id="movie-search-btn"><i
-                                        class="material-icons left">search</i>Search</button>
-
-                            </div>
-                        </form>
-                    </div>
+                    
                     <!-- movie genre checklist -->
                     <div class="row" id="genre-checklist">
                         <form action="#">
                             <p class="col s3">
                                 <label for="action">
-                                    <input type="checkbox" id="action"/>
+                                    <input name="group1" type="radio" id="action" checked/>
                                     <span>Action</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="adventure">
-                                    <input type="checkbox" id="adventure" />
+                                    <input name="group1" type="radio" id="adventure" />
                                     <span>Adventure</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="comedy">
-                                    <input type="checkbox" id="comedy" />
+                                    <input name="group1" type="radio" id="comedy" />
                                     <span>Comedy</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="horror">
-                                    <input type="checkbox" id="horror" />
+                                    <input name="group1" type="radio" id="horror" />
                                     <span>Horror</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="drama">
-                                    <input type="checkbox" id="drama" />
+                                    <input name="group1" type="radio" id="drama" />
                                     <span>Drama</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="romance">
-                                    <input type="checkbox" id="romance" />
+                                    <input name="group1" type="radio" id="romance" />
                                     <span>Romance</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="sci-fi">
-                                    <input type="checkbox" id="scifi" />
+                                    <input name="group1" type="radio" id="sci-fi" />
                                     <span>Sci-Fi</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="family">
-                                    <input type="checkbox" id="family" />
+                                    <input name="group1" type="radio" id="family" />
                                     <span>Family</span>
                                 </label>
                             </p>
@@ -140,7 +128,7 @@
                             <div class="row valign-wrapper">
                                 <div class="input-field col s8">
                                     <textarea id="dining-text-area" class="materialize-textarea"></textarea>
-                                    <label for="dining-text-area">Pizza</label>
+                                    <label for="dining-text-area">Town or City</label>
                                 </div>
                                 <button class="col s3 waves-effect waves-light btn-small purple search-btn"
                                     type="submit" id="dining-search-btn"><i
@@ -149,6 +137,7 @@
                             </div>
                         </form>
                     </div>
+
                     <!-- dining genre checklist -->
                     <div class="row" id="dining-checklist">
                         <div class="error">
@@ -168,9 +157,9 @@
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="healthy">
-                                    <input type="checkbox" class="checkbox" id="healthy" />
-                                    <span>Healthy</span>
+                                <label for="japanese">
+                                    <input type="checkbox" class="checkbox" id="japanese" />
+                                    <span>Japanese</span>
                                 </label>
                             </p>
                             <p class="col s3">

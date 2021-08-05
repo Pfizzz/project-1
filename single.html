@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Plan!</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>&Chill</title>
+    <style>
+        body {
+            background-image: url('./assets/images/background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
 </head>
-<body>
-    <h1>Ok, so here's the plan....</h1>
-    
+
+<body class="grey">
+    <!-- Hero section start -->
+    <header class="container-fluid" id="hero">
+        <div class="row purple darken-2 z-depth-5">
+            <div class="col s12 center-align">
+                <!-- <h1 class="purple darken-4 grey-text text-lighten-5 center-align z-depth-5">&Chill</h1> -->
+             <a href="index.html"><img src="./assets/images/logo2.png" class="logo"/></a>   
+            </div>
+        </div>
+    </header>
+    <div class="container white" id="master-box">
+    <h1>Your Plan for the Evening:</h1>
+        <div class="row">
+            <div class="col s12 m6 center-align">
+                <h2>Your media</h2>
+                    <div id="movie-choice">
+                    <!--Append film data here, add css classes later-->
+                    </div>
+                </div>
+            <div class="col s12 m6 center-align">
+                <h2>Your dining</h2>
+                    <div id="dining-choice">
+                        <!--Append dining data here-->
+                    </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
     <script src="./assets/js/single.js"></script>
 </body>
 </html>

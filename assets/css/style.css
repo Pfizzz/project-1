@@ -19,3 +19,34 @@ h2 {
 .error{
    color:#F44336
 }
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+ 
+  border: 2px solid purple;
+ 
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: purple;
+}
+
+
+ 
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+ 
+    top: 0;
+   
+    width: 20px;
+   
+    height: 20px;
+   
+    border: 2px solid purple;
+   
+    background-color: purple;
+   
+    z-index: 0;
+   
+  }

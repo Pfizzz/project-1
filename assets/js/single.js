@@ -24,15 +24,16 @@ var displayMovies = function(moviesList){
     };
         for(var i=0; i<moviesList.length; i++){
             var title= document.createElement("h3");
+            var coverEl = document.createElement("h3");
+            var coverImg= document.createElement("img");
             var year= document.createElement("p");
             var link = document.createElement("p");
             var hyperLink = document.createElement("a");
-            var coverEl= document.createElement("img");
             var runtime= document.createElement("p");
 
             title.textContent = moviesList[i].title;
-            coverEl.setAttribute("src", moviesList[i].coverSM);
-            title.appendChild(coverEl);
+            coverImg.setAttribute("src", moviesList[i].coverSM);
+            coverEl.appendChild(coverImg);
 
             year.textContent = moviesList[i].year;
             runtime.textContent = moviesList[i].runtime + " Minutes";
@@ -42,6 +43,7 @@ var displayMovies = function(moviesList){
             link.appendChild(hyperLink);
 
             var movieEl = document.createElement("div");
+            movieEl.appendChild(coverEl);
             movieEl.appendChild(title);
             movieEl.appendChild(year);
             movieEl.appendChild(runtime);

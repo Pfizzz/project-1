@@ -151,61 +151,64 @@
                     </div>
                     <!-- dining genre checklist -->
                     <div class="row" id="dining-checklist">
-                        <form action="#">
+                        <div class="error">
+                           Please select atleast one checkbox
+                        </div>
+                        <form action="#" id="food_form">
                             <p class="col s3">
                                 <label for="pizza">
-                                    <input type="checkbox" id="pizza" />
+                                    <input type="checkbox" class="checkbox" id="pizza" />
                                     <span>Pizza</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="fast-food">
-                                    <input type="checkbox" id="fast-food" />
-                                    <span>Fast Food</span>
+                                <label for="american">
+                                    <input type="checkbox" class="checkbox" id="american" />
+                                    <span>American</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="healthy">
-                                    <input type="checkbox" id="healthy" />
+                                    <input type="checkbox" class="checkbox" id="healthy" />
                                     <span>Healthy</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="italian">
-                                    <input type="checkbox" id="italian" />
+                                    <input type="checkbox" class="checkbox" id="italian" />
                                     <span>Italian</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="mexican">
-                                    <input type="checkbox" id="mexican" />
+                                    <input type="checkbox" class="checkbox" id="mexican" />
                                     <span>Mexican</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="chinese">
-                                    <input type="checkbox" id="chinese" />
+                                    <input type="checkbox"  class="checkbox" id="chinese" />
                                     <span>Chinese</span>
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="mediterrarian">
-                                    <input type="checkbox" id="mediterrarian" />
-                                    <span>Mediterrarian</span>
+                                <label for="steak">
+                                    <input type="checkbox" class="checkbox" id="steak" />
+                                    <span>Steak</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="vegetarian">
-                                    <input type="checkbox" id="vegetarian" />
+                                    <input type="checkbox" class="checkbox" id="vegetarian" />
                                     <span>Vegetarian</span>
                                 </label>
                             </p>
                         </form>
                     </div>
                     <div class="row center-align">
-                        <a href="single.html" target="_blank" class="waves-effect waves-light btn purple"
+                        <button id="food-form-btn" class="waves-effect waves-light btn purple"
                             id="dining-generate-btn"><i class="material-icons left">add</i>Choose This
-                            Restaurant!</a>
+                            Restaurant!</button>
                     </div>
                 </div>
             </div>

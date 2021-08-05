@@ -86,6 +86,9 @@ var receiveMovieData = function(data) {
         });
     }
     console.log(moviesList);
-
+    saveMovies();
 }
 
+var saveMovies = function(){
+    localStorage.setItem("movieList", JSON.stringify(moviesList));
+};

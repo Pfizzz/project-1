@@ -228,15 +228,16 @@ var displayMovies = function(moviesList){
           var movieOptionInput = document.createElement("input");
           movieOptionInput.setAttribute("type", "radio");
           movieOptionInput.setAttribute("id", "movie"+i);
-
+          
+          movieEl.appendChild(movieOptionInput);
           movieEl.appendChild(coverEl);
           movieEl.appendChild(title);
           movieEl.appendChild(year);
           movieEl.appendChild(runtime);
           movieEl.appendChild(link);
-          movieOption.appendChild(movieOptionInput);
+          
           movieOption.appendChild(movieEl);
-          movieChoicesEl.appendChild(movieOption);
+          //movieChoicesEl.appendChild(movieOption);
       }
 
 };
@@ -266,12 +267,14 @@ var displayDining = function(restaurantsList){
           diningOptionInput.setAttribute("type", "radio");
           diningOptionInput.setAttribute("id", "restaurant"+i);
           
+          restaurantEl.appendChild(diningOptionInput);
           restaurantEl.appendChild(restaurantName);
           restaurantEl.appendChild(restaurantAdress);
           restaurantEl.appendChild(restaurantPhone);
-          diningOption.appendChild(diningOptionInput);
+
+          
           diningOption.appendChild(restaurantEl);
-          restChoicesEl.appendChild(diningOption);
+          //restChoicesEl.appendChild(diningOption);
           
       }
   };

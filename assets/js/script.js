@@ -61,12 +61,9 @@ var getFood = function () {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.data);
-        receiveRestaurantData(response);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+        console.log(response.data.sort(() => Math.random() - Math.random()).slice(0, 5));
+    
+    })
   }
 }
 };

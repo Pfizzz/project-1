@@ -1,7 +1,7 @@
 //movie section global variables
 var movieSearchEl = $("#generate-movie-btn");
-var movieChoicesEl = document.querySelector("#movie-choices");
-var restChoicesEl = document.querySelector("#dining-choices");
+var movieChoicesEl = document.querySelector("#movie-results");
+var restChoicesEl = document.querySelector("#dining-results");
 var genreId = 0;
 var moviesList = [];
 var user_location;

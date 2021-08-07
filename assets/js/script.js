@@ -18,6 +18,7 @@ $(document).ready(function () {
   navigator.geolocation.getCurrentPosition(showPosition);
 
   $("#generate-movie-btn").click(function () {
+    // debugger;
     //run getGenre function to change the api url to fetch data based on the users choice.
     getGenre(genreId);
   });
@@ -83,52 +84,70 @@ var receiveRestaurantData = function(data){
   console.log(restaurantsList);
   saveRestaurants();
 };
+
+
+
 //use checkbox data to insert genre into api search
 var getGenre = function (genreId) {
-  // debugger;
+  debugger;
+  
+//generate random page number
+function generatePage (min, max) {
+  var page = Math.floor(Math.random() * (max - min + 1) + min);
+  return page;
+};
+
   var id = 0;
-  console.log(id);
   //change the value of genreId based on which checkbox is clicked
   if ($("#action").is(":checked")) {
     id = 28;
+    generatePage(1, 36);
+    console.log(page);
     getMovies(id);
   }
   if ($("#adventure").is(":checked")) {
     id = 12;
-    getMovies(id);
+    generatePage(1, 28);
+    getMovies(id, page);
   }
   if ($("#comedy").is(":checked")) {
     id = 35;
-    getMovies(id);
+    generatePage(1, 87);
+    getMovies(id, page);
   }
   if ($("#horror").is(":checked")) {
     id = 27;
-    getMovies(id);
+    generatePage(1, 14);
+    getMovies(id, page);
   }
   if ($("#drama").is(":checked")) {
     id = 18;
-    getMovies(id);
+    generatePage(1, 84);
+    getMovies(id, page);
   }
   if ($("#romance").is(":checked")) {
     id = 10749;
-    getMovies(id);
+    generatePage(1, 20);
+    getMovies(id, page);
   }
   if ($("#scifi").is(":checked")) {
     id = 878;
-    getMovies(id);
+    generatePage(1, 8);
+    getMovies(id, page);
   }
   if ($("#family").is(":checked")) {
     id = 10751;
-    getMovies(id);
+    generatePage(1, 18);
+    getMovies(id, page);
   }
 };
 
-var getMovies = function (genreId) {
+var getMovies = function (genreId, page) {
   //fetch movie api information
   fetch(
     "https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=" +
       genreId +
-      "&page=1&language=en",
+      "&page=" + page + "&language=en",
     {
       method: "GET",
       headers: {

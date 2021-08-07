@@ -237,7 +237,7 @@ var displayMovies = function(moviesList){
           movieEl.appendChild(link);
           
           movieOption.appendChild(movieEl);
-          movieChoicesEl.appendChild(movieOption);
+          //movieChoicesEl.appendChild(movieOption);
       }
 
 };
@@ -274,7 +274,7 @@ var displayDining = function(restaurantsList){
 
           
           diningOption.appendChild(restaurantEl);
-          restChoicesEl.appendChild(diningOption);
+          //restChoicesEl.appendChild(diningOption);
           
       }
   };

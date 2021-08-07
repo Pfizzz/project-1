@@ -1,5 +1,7 @@
 //movie section global variables
 var movieSearchEl = $("#generate-movie-btn");
+var movieChoicesEl = document.querySelector("#movie-results");
+var restChoicesEl = document.querySelector("#dining-results");
 var genreId = 0;
 var moviesList = [];
 var user_location;
@@ -18,6 +20,7 @@ $(document).ready(function () {
   navigator.geolocation.getCurrentPosition(showPosition);
 
   $("#generate-movie-btn").click(function () {
+    // debugger;
     //run getGenre function to change the api url to fetch data based on the users choice.
     getGenre(genreId);
   });
@@ -79,53 +82,71 @@ var receiveRestaurantData = function(data){
   }
   console.log(restaurantsList);
   saveRestaurants();
+  displayDining(restaurantsList);
 };
+
+
+
 //use checkbox data to insert genre into api search
 var getGenre = function (genreId) {
-  // debugger;
+  
+//generate random page number
+function generatePage (min, max) {
+  var page = Math.floor(Math.random() * (max - min + 1) + min);
+  return page;
+};
+
   var id = 0;
-  console.log(id);
+  var page = 1;
   //change the value of genreId based on which checkbox is clicked
   if ($("#action").is(":checked")) {
     id = 28;
-    getMovies(id);
+    page = generatePage(1, 36);
+    getMovies(id, page);
   }
   if ($("#adventure").is(":checked")) {
     id = 12;
-    getMovies(id);
+    generatePage(1, 28);
+    getMovies(id, page);
   }
   if ($("#comedy").is(":checked")) {
     id = 35;
-    getMovies(id);
+    generatePage(1, 87);
+    getMovies(id, page);
   }
   if ($("#horror").is(":checked")) {
     id = 27;
-    getMovies(id);
+    generatePage(1, 14);
+    getMovies(id, page);
   }
   if ($("#drama").is(":checked")) {
     id = 18;
-    getMovies(id);
+    generatePage(1, 84);
+    getMovies(id, page);
   }
   if ($("#romance").is(":checked")) {
     id = 10749;
-    getMovies(id);
+    generatePage(1, 20);
+    getMovies(id, page);
   }
   if ($("#scifi").is(":checked")) {
     id = 878;
-    getMovies(id);
+    generatePage(1, 8);
+    getMovies(id, page);
   }
   if ($("#family").is(":checked")) {
     id = 10751;
-    getMovies(id);
+    generatePage(1, 18);
+    getMovies(id, page);
   }
 };
 
-var getMovies = function (genreId) {
+var getMovies = function (genreId, page) {
   //fetch movie api information
   fetch(
     "https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=" +
       genreId +
-      "&page=1&language=en",
+      "&page=" + page + "&language=en",
     {
       method: "GET",
       headers: {
@@ -159,6 +180,7 @@ var receiveMovieData = function (data) {
   }
   console.log(moviesList);
   saveMovies();
+  displayMovies(moviesList);
 };
     
 var saveMovies = function(){
@@ -167,4 +189,88 @@ var saveMovies = function(){
 
 var saveRestaurants = function(){
   localStorage.setItem("restaurantList", JSON.stringify(restaurantsList));
+};
+
+var displayMovies = function(moviesList){
+  movieChoicesEl.innerHTML = "";
+
+  if(!moviesList){
+      movieChoicesEl.textContent = "No Movies Searched";
+  };
+      for(var i=0; i<moviesList.length; i++){
+          var title= document.createElement("h3");
+          var coverEl = document.createElement("h3");
+          var coverImg= document.createElement("img");
+          var year= document.createElement("p");
+          var link = document.createElement("p");
+          var hyperLink = document.createElement("a");
+          var runtime= document.createElement("p");
+
+          title.textContent = moviesList[i].title;
+          coverImg.setAttribute("src", moviesList[i].coverSM);
+          coverEl.appendChild(coverImg);
+
+          year.textContent = moviesList[i].year;
+          runtime.textContent = moviesList[i].runtime + " Minutes";
+
+          hyperLink.setAttribute("href", moviesList[i].link.link);
+          hyperLink.textContent = "Watch Movie Here";
+          link.appendChild(hyperLink);
+
+          var movieEl = document.createElement("div");
+          
+          var movieOption = document.createElement("label");
+          movieOption.setAttribute("for", "action");
+
+          var movieOptionInput = document.createElement("input");
+          movieOptionInput.setAttribute("type", "radio");
+          movieOptionInput.setAttribute("id", "movie"+i);
+
+          movieEl.appendChild(coverEl);
+          movieEl.appendChild(title);
+          movieEl.appendChild(year);
+          movieEl.appendChild(runtime);
+          movieEl.appendChild(link);
+          movieOption.appendChild(movieOptionInput);
+          movieOption.appendChild(movieEl);
+          movieChoicesEl.appendChild(movieOption);
+      }
+
+};
+
+var displayDining = function(restaurantsList){
+  restChoicesEl.innerHTML = "";
+
+  if(!restaurantsList){
+      restChoicesEl.textContent = "No Restaurants Searched";
+  }
+  else{
+      for(var i = 0; i<restaurantsList.length; i++){
+          var restaurantName = document.createElement("h3");
+          var restaurantAdress= document.createElement("p");
+          var restaurantPhone= document.createElement("p");
+
+          restaurantName.textContent = restaurantsList[i].restaurant_name;
+          restaurantAdress.textContent = restaurantsList[i].address;
+          restaurantPhone.textContent = restaurantsList[i].restaurant_phone;
+
+          var restaurantEl= document.createElement("div");
+
+          var diningOption = document.createElement("label");
+          diningOption.setAttribute("for", "action");
+
+          var diningOptionInput = document.createElement("input");
+          diningOptionInput.setAttribute("type", "radio");
+          diningOptionInput.setAttribute("id", "restaurant"+i);
+          
+          restaurantEl.appendChild(restaurantName);
+          restaurantEl.appendChild(restaurantAdress);
+          restaurantEl.appendChild(restaurantPhone);
+          diningOption.appendChild(diningOptionInput);
+          diningOption.appendChild(restaurantEl);
+          restChoicesEl.appendChild(diningOption);
+          
+      }
+  };
+  
 };

@@ -145,12 +145,12 @@ var getGenre = function (genreId) {
     }
   };
 
-var getMovies = function (genreId) {
+var getMovies = function (genreId, pageNum) {
   //fetch movie api information
   fetch(
     "https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=" +
       genreId +
-      "&page=1&language=en",
+      "&page="+pageNum+"&language=en",
     {
       method: "GET",
       headers: {

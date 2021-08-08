@@ -107,11 +107,6 @@
                         <button class="waves-effect waves-light btn purple"
                             id="generate-movie-btn"><i class="material-icons left">add</i>Choose Movie Genre!</button>
                     </div>
-                    <div class="row center-align" id="movie-choices">
-                        <form action="#" id="movie-results">
-
-                        </form>
-                    </div>
                 </div>
             </div>
 
@@ -131,7 +126,7 @@
                         <form class="col s12">
                             <div class="row valign-wrapper">
                                 <div class="input-field col s8">
-                                    <textarea id="dining-text-area" class="materialize-textarea"></textarea>
+                                    <textarea id="dining-text-area"  class="materialize-textarea"></textarea>
                                     <label for="dining-text-area" class="purple-text text-darken-4">Town or City</label>
                                 </div>
                                 <button class="col s3 waves-effect waves-light btn-small purple search-btn"
@@ -144,55 +139,55 @@
 
                     <!-- dining genre checklist -->
                     <div class="row left-align" id="dining-checklist">
-                        <div class="error">
-                           Please select at least one checkbox.
+                        <div class="error center">
+                           Please select at radio box.
                         </div>
                         <form action="#" id="food_form">
                             <p class="col s3">
                                 <label for="pizza" class="purple-text text-darken-4">
-                                    <input type="checkbox" class="checkbox filled-in" id="pizza" />
+                                    <input name="group2" type="radio" class="radiobox filled-in" id="pizza" />
                                     <span>Pizza</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="american" class="purple-text text-darken-4">
-                                    <input type="checkbox" class="checkbox filled-in" id="american" />
+                                    <input name="group2" type="radio"  class="radiobox filled-in" id="american" />
                                     <span>American</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="japanese" class="purple-text text-darken-4">
-                                    <input type="checkbox" class="checkbox filled-in" id="japanese" />
+                                    <input name="group2" type="radio"  class="radiobox filled-in" id="japanese" />
                                     <span>Japanese</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="italian" class="purple-text text-darken-4">
-                                    <input type="checkbox" class="checkbox filled-in" id="italian" />
+                                    <input name="group2" type="radio" class="radiobox filled-in" id="italian" />
                                     <span>Italian</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="mexican" class="purple-text text-darken-4">
-                                    <input type="checkbox" class="checkbox filled-in" id="mexican" />
+                                    <input name="group2" type="radio" class="radiobox filled-in" id="mexican" />
                                     <span>Mexican</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="chinese" class="purple-text text-darken-4">
-                                    <input type="checkbox"  class="checkbox filled-in" id="chinese" />
+                                    <input name="group2" type="radio"  class="radiobox filled-in" id="chinese" />
                                     <span>Chinese</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="steak" class="purple-text text-darken-4">
-                                    <input type="checkbox" class="checkbox filled-in" id="steak" />
+                                    <input name="group2" type="radio" class="radiobox filled-in" id="steak" />
                                     <span>Steak</span>
                                 </label>
                             </p>
                             <p class="col s3">
                                 <label for="vegetarian" class="purple-text text-darken-4">
-                                    <input type="checkbox" class="checkbox filled-in" id="vegetarian" />
+                                    <input name="group2" type="radio" class="radiobox filled-in" id="vegetarian" />
                                     <span>Vegetarian</span>
                                 </label>
                             </p>
@@ -202,11 +197,6 @@
                         <button id="food-form-btn" class="waves-effect waves-light btn purple"
                             id="dining-generate-btn"><i class="material-icons left">add</i>Choose This
                             Restaurant!</button>
-                    </div>
-                    <div class="row center-align" id="dining-choices">
-                        <form action="#" id="dining-results">
-
-                        </form>
                     </div>
                 </div>
             </div>
@@ -230,7 +220,9 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCy-miPEF0Zsa3etjugSWUW-M50jDi0MWI&sensor=false"></script>
         <script src="./assets/js/script.js"></script>
+        
 
 </body>
 

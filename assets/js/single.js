@@ -2,6 +2,7 @@ var moviesList = [];
 var restaurantsList = [];
 var movieChoiceEl = document.querySelector("#movie-choice");
 var restChoiceEl = document.querySelector("#dining-choice");
+$('#modal1').modal();
 
 var loadMovies = function(){
     moviesList = JSON.parse(localStorage.getItem("movieList"));
@@ -64,22 +65,60 @@ var displayDining = function(restaurantsList){
             var restaurantName = document.createElement("h3");
             var restaurantAdress= document.createElement("p");
             var restaurantPhone= document.createElement("p");
+            var cuisine= document.createElement("p");
+            var button = document.createElement("div")
+            button.innerHTML=`
+            <a class="waves-effect waves-light btn-large purple btn modal-trigger" id="menu-${i}" data-menu='${i}' href="#modal1" onclick="$('#modal1').modal('open');modal_menu(${i})">Menu</a>`
 
             restaurantName.textContent = restaurantsList[i].restaurant_name;
             restaurantAdress.textContent = restaurantsList[i].address;
             restaurantPhone.textContent = restaurantsList[i].restaurant_phone;
+            cuisine.textContent = restaurantsList[i].cuisine;
 
             var restaurantEl= document.createElement("div");
             restaurantEl.appendChild(restaurantName);
             restaurantEl.appendChild(restaurantAdress);
             restaurantEl.appendChild(restaurantPhone);
+            restaurantEl.appendChild(cuisine)
+            restaurantEl.appendChild(button)
             restChoiceEl.appendChild(restaurantEl);
-            console.log(restaurantEl);
         }
     };
     
 };
 
+function modal_menu(id){
+    var data = restaurantsList[id].menu;
+    $("#modal-body").html("")
+    data.forEach(element => {
+        console.log(element)
+        $("#modal-body").append(`
+        <h4 class="center">${element.menu_name}</h4>
+        <br/>
+        `)
+        element.menu_sections.forEach((item,index)=>{
+            $("#modal-body").append(`
+             <h5 class="center">${index+1} ${item.section_name}</h5>
+             <p class="center">${item.description}</p>
+             <br/>
+             
+            `) 
+             item.menu_items.forEach((food,index2)=>{
+               $("#modal-body").append(`
+               <div class="row">
+               <div class="col s2">${index2+1}</div>
+               <div class="col s4">${food.name}</div>
+               <div class="col s4">${food.description}</div>
+               <div class="col s2">$ ${food.price}</div>
+               </div>
+
+               `)  
+             }) 
+        })
+        
+        
+    });
+}
 
 displayMovies(moviesList);
 displayDining(restaurantsList);

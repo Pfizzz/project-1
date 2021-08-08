@@ -93,50 +93,64 @@ var receiveRestaurantData = function(data,cuisine){
 };
 //use checkbox data to insert genre into api search
 var getGenre = function (genreId) {
-  // debugger;
-  var id = 0;
-  console.log(id);
-  //change the value of genreId based on which checkbox is clicked
-  if ($("#action").is(":checked")) {
-    id = 28;
-    getMovies(id);
-  }
-  if ($("#adventure").is(":checked")) {
-    id = 12;
-    getMovies(id);
-  }
-  if ($("#comedy").is(":checked")) {
-    id = 35;
-    getMovies(id);
-  }
-  if ($("#horror").is(":checked")) {
-    id = 27;
-    getMovies(id);
-  }
-  if ($("#drama").is(":checked")) {
-    id = 18;
-    getMovies(id);
-  }
-  if ($("#romance").is(":checked")) {
-    id = 10749;
-    getMovies(id);
-  }
-  if ($("#scifi").is(":checked")) {
-    id = 878;
-    getMovies(id);
-  }
-  if ($("#family").is(":checked")) {
-    id = 10751;
-    getMovies(id);
-  }
-};
+  
+  //generate random page number
+  function generatePage (min, max) {
+    var page = Math.floor(Math.random() * (max - min + 1) + min);
+    return page;
+  };
+  
+    var id = 0;
+    var page = 1;
+    //change the value of genreId based on which checkbox is clicked
+    if ($("#action").is(":checked")) {
+      id = 28;
+      page = generatePage(1, 36);
+      getMovies(id, page);
+    }
+    if ($("#adventure").is(":checked")) {
+      id = 12;
+      page = generatePage(1, 28);
+      getMovies(id, page);
+    }
+    if ($("#comedy").is(":checked")) {
+      id = 35;
+      page = generatePage(1, 87);
+      getMovies(id, page);
+    }
+    if ($("#horror").is(":checked")) {
+      id = 27;
+      page = generatePage(1, 14);
+      getMovies(id, page);
+    }
+    if ($("#drama").is(":checked")) {
+      id = 18;
+      page = generatePage(1, 84);
+      getMovies(id, page);
+    }
+    if ($("#romance").is(":checked")) {
+      id = 10749;
+      page = generatePage(1, 20);
+      getMovies(id, page);
+    }
+    if ($("#scifi").is(":checked")) {
+      id = 878;
+      page = generatePage(1, 8);
+      getMovies(id, page);
+    }
+    if ($("#family").is(":checked")) {
+      id = 10751;
+      page = generatePage(1, 18);
+      getMovies(id, page);
+    }
+  };
 
-var getMovies = function (genreId) {
+var getMovies = function (genreId, pageNum) {
   //fetch movie api information
   fetch(
     "https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=" +
       genreId +
-      "&page=1&language=en",
+      "&page="+pageNum+"&language=en",
     {
       method: "GET",
       headers: {

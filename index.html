@@ -29,7 +29,7 @@
             <div class="col s12 center-align">
                 
              <img src="./assets/images/logo2.png" class="logo"/>   
-             <p class="purple darken-4 grey-text text-lighten-5 center-align z-depth-5">Dinner and a movie just got a lot simpler!</p>
+             <p class="purple darken-4 grey-text text-lighten-5 center-align z-depth-5">Dinner and a movie just got a lot simpler! </br> 1. Add a Genre. 2. Add dining. 3. Generate your plan.</p>
             </div>
         </div>
     </header>
@@ -44,7 +44,7 @@
                         class="material-icons">add</i></a>
                 <p>
                     <!--hide this on click-->
-                    Don't know what's on? Pick a genre and browse the most popular streaming services.
+                    Don't know what's on? Pick a genre and let us show you some options.
                     
                 </p>
 
@@ -105,7 +105,7 @@
                     </div>
                     <div class="row center-align">
                         <button class="waves-effect waves-light btn purple"
-                            id="generate-movie-btn"><i class="material-icons left">add</i>Choose Movie Genre!</button>
+                            id="generate-movie-btn"><i class="material-icons left">add</i>Save Your Genre!</button>
                     </div>
                 </div>
             </div>
@@ -118,21 +118,18 @@
                         class="material-icons">add</i></a>
                 <p>
                     <!-- hide this on click -->
-                    Hungry? Complete your movie with a meal while supporting your local restaurants.
+                    Hungry? Browse and support your local restaurants.
                 </p>
                 <div class="container-fluid" style="display:none" id="dining-api">
                     <!-- dining search form-->
                     <div class="row">
                         <form class="col s12">
                             <div class="row valign-wrapper">
-                                <div class="input-field col s8">
+                                <div class="input-field col s12">
                                     <textarea id="dining-text-area"  class="materialize-textarea"></textarea>
-                                    <label for="dining-text-area" class="purple-text text-darken-4">Town or City</label>
+                                    <label for="dining-text-area" class="purple-text text-darken-4">1. Enter your town and state here. (Ridgewood, NJ)</label>
                                 </div>
-                                <button class="col s3 waves-effect waves-light btn-small purple search-btn"
-                                    type="submit" id="dining-search-btn"><i
-                                        class="material-icons left">search</i>Search</button>
-
+            
                             </div>
                         </form>
                     </div>
@@ -140,8 +137,9 @@
                     <!-- dining genre checklist -->
                     <div class="row left-align" id="dining-checklist">
                         <div class="error center">
-                           Please select at radio box.
+                           2. Choose an option.
                         </div>
+                        <p class="container">2. Select an Option:</p>
                         <form action="#" id="food_form">
                             <p class="col s3">
                                 <label for="pizza" class="purple-text text-darken-4">
@@ -180,9 +178,9 @@
                                 </label>
                             </p>
                             <p class="col s3">
-                                <label for="steak" class="purple-text text-darken-4">
-                                    <input name="group2" type="radio" class="radiobox filled-in" id="steak" />
-                                    <span>Steak</span>
+                                <label for="indian" class="purple-text text-darken-4">
+                                    <input name="group2" type="radio" class="radiobox filled-in" id="indian" />
+                                    <span>Indian</span>
                                 </label>
                             </p>
                             <p class="col s3">
@@ -195,8 +193,7 @@
                     </div>
                     <div class="row center-align">
                         <button id="food-form-btn" class="waves-effect waves-light btn purple"
-                            id="dining-generate-btn"><i class="material-icons left">add</i>Choose This
-                            Restaurant!</button>
+                            id="dining-generate-btn"><i class="material-icons left">add</i>Save Your dining!</button>
                     </div>
                 </div>
             </div>
